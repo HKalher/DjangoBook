@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Search</title>
+        {% load staticfiles %}
+        <link href="{% static 'twitter_bootstrap/less/bootstrap.less'%}" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    {% if errors %}
+{#        <p style="color: red;">Please submit a search term</p>#}
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+        <form action="" method="get">
+            <input type="text" name="q">
+            <input type="submit" value="Search">
+        </form>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">Left</button>
+            <button type="button" class="btn btn-default">Middle</button>
+            <button type="button" class="btn btn-default">Right</button>
+        </div>
+    </body>
+</html>
